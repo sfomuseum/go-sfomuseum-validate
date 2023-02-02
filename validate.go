@@ -1,7 +1,6 @@
 package validate
 
 import (
-	"context"
 	"fmt"
 )
 
@@ -20,13 +19,13 @@ func DefaultValidateOptions() *Options {
 	}
 }
 
-func Validate(ctx context.Context, body []byte) error {
+func Validate(body []byte) error {
 
 	opts := DefaultValidateOptions()
-	return ValidateWithOptions(ctx, body, opts)
+	return ValidateWithOptions(body, opts)
 }
 
-func ValidateWithOptions(ctx context.Context, body []byte, options *Options) error {
+func ValidateWithOptions(body []byte, options *Options) error {
 
 	if options.ValidatePlacetype {
 
