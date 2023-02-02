@@ -7,7 +7,7 @@ import (
 func TestValidateSFOLevel(t *testing.T) {
 
 	tests_ok := []string{
-		`{"properties": { "sfomuseum:placetype": "region" }}`,		
+		`{"properties": { "sfomuseum:placetype": "region" }}`,
 		`{"properties": { "sfomuseum:placetype": "publicart", "sfo:level": 2 }}`,
 		`{"properties": { "sfomuseum:placetype": "garage", "sfo:level": 4 }}`,
 		`{"properties": { "sfomuseum:placetype": "exhibition", "sfo:level": 3 }}`,

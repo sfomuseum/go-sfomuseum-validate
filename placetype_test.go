@@ -7,7 +7,7 @@ import (
 func TestValidatePlacetype(t *testing.T) {
 
 	tests_ok := []string{
-		`{"properties": { "sfomuseum:placetype": "region", "wof:placetype": "region" }}`,		
+		`{"properties": { "sfomuseum:placetype": "region", "wof:placetype": "region" }}`,
 		`{"properties": { "sfomuseum:placetype": "publicart" }}`,
 		`{"properties": { "sfomuseum:placetype": "garage" }}`,
 		`{"properties": { "sfomuseum:placetype": "exhibition" }}`,

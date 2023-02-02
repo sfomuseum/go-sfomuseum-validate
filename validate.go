@@ -7,6 +7,7 @@ import (
 
 type Options struct {
 	ValidatePlacetype bool
+	ValidateRepo      bool
 	ValidateSFOLevel  bool
 }
 
@@ -14,6 +15,7 @@ func DefaultValidateOptions() *Options {
 
 	return &Options{
 		ValidatePlacetype: true,
+		ValidateRepo:      true,
 		ValidateSFOLevel:  true,
 	}
 }
@@ -32,6 +34,15 @@ func ValidateWithOptions(ctx context.Context, body []byte, options *Options) err
 
 		if err != nil {
 			return fmt.Errorf("Failed to validate sfomuseum:placetype, %w", err)
+		}
+	}
+
+	if options.ValidateRepo {
+
+		err := ValidateRepo(body)
+
+		if err != nil {
+			return fmt.Errorf("Failed to validate wof:repo, %w", err)
 		}
 	}
 
